@@ -127,3 +127,31 @@ footer {
     background: #F4EDE2;
     margin-top: 40px;
 }
+/* ---- Brand header with logo ---- */
+.brand{
+  display:flex; align-items:center; gap:10px; text-decoration:none;
+}
+.brand-logo{
+  width:44px; height:44px; object-fit:contain;
+}
+.brand-name{
+  font-family:"Cormorant Garamond", Georgia, serif;
+  color:var(--leather); font-size:22px; font-weight:700; letter-spacing:.3px;
+}
+
+/* ---- Hero overlay content ---- */
+.hero{ position:relative; }
+.hero-overlay{
+  max-width:760px;
+  background:rgba(0,0,0,.45);
+  padding:24px 26px;
+  border-radius:8px;
+  color:#fff;
+  box-shadow:var(--shadow);
+}
+.hero-logo{
+  width:72px; height:72px; display:block; margin-bottom:10px; object-fit:contain;
+}
+.tagline{
+  margin:6px 0 0; font-weight:600; letter-spacing:.3px;
+}
