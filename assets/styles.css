@@ -76,3 +76,78 @@ nav a:hover{ color:#6a5443; }
   font-size:clamp(18px, 2.2vw, 24px);
   font-weight:700; letter-spacing:.3px;
   color:#fff6ef;
+  margin:6px 0 clamp(12px, 2vh, 22px);
+}
+
+.btn{
+  display:inline-block;
+  background:var(--saddle);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+}
+.btn:hover{ filter:brightness(.92); }
+
+/* ================= CONTENT ================= */
+.intro, .featured{ padding:40px 32px; }
+h2{ font-family:"Cormorant Garamond", Georgia, serif; color:var(--leather); margin:0 0 12px; }
+h3{ color:var(--leather); margin:8px 0; }
+
+.grid{
+  display:grid;
+  gap:28px;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  margin-top:22px;
+}
+.card{
+  background:var(--cream);
+  padding:22px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+}
+.card-img{ width:100%; border-radius:6px; display:block; margin-bottom:12px; }
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--cream);
+  padding:24px; text-align:center;
+  border-top:1px solid rgba(0,0,0,.06);
+  margin-top:40px;
+}
+
+/* ============= RESPONSIVE TUNING ============= */
+/* Medium desktops (≤1440px): gently step sizes down */
+@media (max-width:1440px){
+  .brand-logo{ width:clamp(240px, 18vw, 360px); }
+  .hero-logo--huge{ width:clamp(480px, 44vw, 860px); }
+  .hero{ min-height:min(78vh, 840px); }
+}
+
+/* Laptops (≤1200px): ensure everything fits neatly at 100% */
+@media (max-width:1200px){
+  header{ padding:16px 24px; }
+  .brand-logo{ width:clamp(220px, 18vw, 320px); }
+  nav a{ margin-left:18px; }
+  .hero{ min-height:min(76vh, 780px); padding:40px 24px; }
+  .hero-overlay{ max-width:min(94vw, 980px); }
+  .hero-logo--huge{ width:clamp(440px, 46vw, 760px); }
+}
+
+/* Tablets (≤900px): stack-friendly sizes */
+@media (max-width:900px){
+  .brand-logo{ width:clamp(200px, 30vw, 280px); }
+  .hero{ min-height:640px; }
+  .hero-overlay{ padding:24px; }
+  .hero-logo--huge{ width:clamp(360px, 62vw, 620px); }
+}
+
+/* Mobile (≤600px): comfortable, not cramped */
+@media (max-width:600px){
+  header{ padding:14px 16px; }
+  .brand-logo{ width:clamp(180px, 46vw, 240px); }
+  nav a{ margin-left:14px; }
+  .hero{ min-height:540px; padding:28px 16px; }
+  .hero-logo--huge{ width:clamp(260px, 80vw, 420px); }
+}
