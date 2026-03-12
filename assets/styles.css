@@ -155,3 +155,59 @@ footer {
 .tagline{
   margin:6px 0 0; font-weight:600; letter-spacing:.3px;
 }
+/* === Logo scaling controls === */
+:root{
+  /* Set your current/desired base header logo width (before scaling) */
+  --header-logo-base: 120px;
+
+  /* Make actual header logo 2× bigger than before */
+  --header-logo-scale: 2;
+
+  /* Make hero logo 5× bigger than the header logo */
+  --hero-logo-multiplier: 5;
+
+  /* Optional hero layout settings */
+  --hero-max-width: 960px;
+  --hero-min-height: 68vh;
+}
+
+/* Header logo — targets your top-left logo */
+.site-logo img,
+.header-logo img,
+.navbar-brand img {
+  width: calc(var(--header-logo-base) * var(--header-logo-scale));
+  height: auto;
+  display: block;
+}
+
+/* Hero container (keep your existing background image via CSS, not in HTML) */
+.hero {
+  min-height: var(--hero-min-height);
+  display: grid;
+  align-items: center;     /* vertical centering */
+  padding: clamp(16px, 5vw, 48px);
+}
+
+/* Keep hero content left-aligned, vertically centered */
+.hero .hero-left {
+  justify-self: start;     /* “middle-left” positioning */
+  max-width: var(--hero-max-width);
+}
+
+/* Hero logo — 5× bigger than the header logo */
+.hero .hero-logo {
+  width: calc(var(--header-logo-base) * var(--header-logo-scale) * var(--hero-logo-multiplier));
+  max-width: min(60vw, 1100px); /* safety cap */
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,.12));
+}
+
+/* Optional: responsive tweak for small screens */
+@media (max-width: 768px){
+  :root { --header-logo-base: 90px; }
+  .hero .hero-logo { max-width: 86vw; }
+}
