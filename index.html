@@ -4,15 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forever Part of Me Jewellery – Always Close to Your Heart</title>
-  assets/styles.css
+
+  <!-- Load fonts (optional, looks nicer) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- THE CRITICAL STYLESHEET LINK -->
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
-
-  <!-- HEADER -->
+  <!-- ================= HEADER ================= -->
   <header>
-    index.html" class="brand">
-      assets/images/logo.png" alt="Forever Part of Me Jewellery Logo" class="brand-logo">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo.png" alt="Forever Part of Me Jewellery logo" class="brand-logo">
       <div class="brand-text">
         <span class="brand-primary">Forever Part of Me</span>
         <span class="brand-secondary">Jewellery</span>
@@ -20,73 +25,59 @@
     </a>
 
     <nav>
-      index.htmlHome</a>
-      about.htmlOur Story</a>
-      shop.htmlShop</a>
-      custom.htmlCustom Orders</a>
-      contact.htmlContact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">Our Story</a>
+      <a href="shop.html">Shop</a>
+      <a href="custom.html">Custom Orders</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- ================= HERO ================= -->
   <section class="hero" style="background-image:url('assets/images/hero.jpg');">
     <div class="hero-overlay">
-
-      <!-- BIG LOGO (5× size) -->
-      assets/images/logo.png"
-        alt="Forever Part of Me Jewellery Logo"
-        class="hero-logo">
-
-      <!-- HERO TITLE -->
+      <!-- BIG logo on hero (5×) -->
+      <img src="assets/images/logo.png" alt="Forever Part of Me Jewellery logo" class="hero-logo hero-logo--large">
       <h1 class="hero-title">
         <span class="brand-primary">Forever Part of Me</span>
         <span class="brand-secondary">Jewellery</span>
       </h1>
-
       <p class="tagline">Always Close to Your Heart</p>
-
-      shop.html" class="btn">Browse the Collection</a>
+      <a href="shop.html" class="btn">Browse the Collection</a>
     </div>
   </section>
 
-  <!-- INTRO -->
+  <!-- ================= INTRO ================= -->
   <section class="intro">
     <h2>Where Memories Become Art</h2>
     <p>Each piece is handcrafted with compassion and care — from horsehair bracelets to pawprint pendants and ash‑infused silver memorials.</p>
   </section>
 
-  <!-- FEATURED -->
+  <!-- ================= FEATURED ================= -->
   <section class="featured">
     <h2>Featured Creations</h2>
     <div class="grid">
-
       <div class="card">
-        assets/images/horsehair_sample.jpg"
-        alt="Horsehair Bracelet" class="card-img">
+        <img src="assets/images/horsehair_sample.jpg" alt="Horsehair Bracelet" class="card-img">
         <h3>Horsehair Bracelets</h3>
-        <p>Elegant, personal and crafted from your horse’s mane or tail.</p>
+        <p>Elegant, personal, and crafted from your horse’s mane or tail.</p>
       </div>
-
       <div class="card">
-        assets/images/pawprint_sample.jpg"
-        alt="Pawprint Pendant" class="card-img">
+        <img src="assets/images/pawprint_sample.jpg" alt="Pawprint Pendant" class="card-img">
         <h3>Pawprint Pendants</h3>
         <p>Capture the unique print of your beloved pet forever.</p>
       </div>
-
       <div class="card">
-        assets/images/memorial_necklace.jpg"
-        alt="Memorial Necklace" class="card-img">
+        <img src="assets/images/memorial_necklace.jpg" alt="Ash‑Infused Necklace" class="card-img">
         <h3>Ash‑Infused Silver</h3>
         <p>Meaningful keepsakes forged with love and remembrance.</p>
       </div>
-
     </div>
   </section>
 
+  <!-- ================= FOOTER ================= -->
   <footer>
     <p>© 2026 Forever Part of Me Jewellery. Handcrafted with love in the UK.</p>
   </footer>
-
 </body>
 </html>
