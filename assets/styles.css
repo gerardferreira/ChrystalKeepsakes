@@ -1,213 +1,178 @@
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #FFF9F6;
-    color: #5A4A42;
-}
-
-header {
-    background: #F4EDE2;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    color: #8C6E59;
-    letter-spacing: 1px;
-}
-
-nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #8C6E59;
-    font-weight: bold;
-}
-
-nav a.active {
-    text-decoration: underline;
-}
-
-.hero {
-    background-image: url('assets/images/hero.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 420px;
-    display: flex;
-    align-items: center;
-    color: white;
-    padding: 40px;
-}
-
-.hero-text {
-    background: rgba(0,0,0,0.45);
-    padding: 20px 25px;
-    border-radius: 6px;
-}
-
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 50px;
-    margin: 0 0 10px;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    background: #C2A58A;
-    color: white;
-    padding: 10px 22px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.intro, .featured, .content {
-    padding: 40px 60px;
-    text-align: center;
-}
-
-h2 {
-    font-family: 'Cormorant Garamond', serif;
-    color: #8C6E59;
-}
-
-.grid, .shop-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding-top: 30px;
-}
-
-.card {
-    background: #F4EDE2;
-    border-radius: 6px;
-    padding: 20px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 4px;
-}
-
-.page-banner {
-    background: #C2A58A;
-    padding: 60px 20px;
-    text-align: center;
-    color: white;
-}
-
-.custom-form {
-    max-width: 500px;
-    margin: auto;
-    text-align: left;
-}
-
-.custom-form input, .custom-form select, .custom-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-}
-
-.custom-form button {
-    background: #8C6E59;
-    color: white;
-    padding: 12px 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #F4EDE2;
-    margin-top: 40px;
-}
-/* ---- Brand header with logo ---- */
-.brand{
-  display:flex; align-items:center; gap:10px; text-decoration:none;
-}
-.brand-logo{
-  width:44px; height:44px; object-fit:contain;
-}
-.brand-name{
-  font-family:"Cormorant Garamond", Georgia, serif;
-  color:var(--leather); font-size:22px; font-weight:700; letter-spacing:.3px;
-}
-
-/* ---- Hero overlay content ---- */
-.hero{ position:relative; }
-.hero-overlay{
-  max-width:760px;
-  background:rgba(0,0,0,.45);
-  padding:24px 26px;
-  border-radius:8px;
-  color:#fff;
-  box-shadow:var(--shadow);
-}
-.hero-logo{
-  width:72px; height:72px; display:block; margin-bottom:10px; object-fit:contain;
-}
-.tagline{
-  margin:6px 0 0; font-weight:600; letter-spacing:.3px;
-}
-/* === Logo scaling controls === */
+/* ===============================
+   GLOBAL CONTROLS (edit here)
+   =============================== */
 :root{
-  /* Set your current/desired base header logo width (before scaling) */
+  /* Base width used to compute both logos. Increase/decrease to scale both. */
   --header-logo-base: 120px;
 
-  /* Make actual header logo 2× bigger than before */
+  /* Header logo scale (we want 2×) */
   --header-logo-scale: 2;
 
-  /* Make hero logo 5× bigger than the header logo */
+  /* Hero logo should be 5× the header size */
   --hero-logo-multiplier: 5;
 
-  /* Optional hero layout settings */
-  --hero-max-width: 960px;
-  --hero-min-height: 68vh;
+  /* Layout */
+  --page-bg: #f6f1e7;        /* soft, warm neutral background */
+  --hero-min-height: 68vh;   /* height of hero */
+  --hero-max-width: 960px;   /* max content width inside hero */
+
+  /* Colors */
+  --text-dark: #2b2b2b;
+  --text-light: #ffffff;
+
+  /* Buttons */
+  --btn-bg: #6b5534;
+  --btn-bg-hover: #4f4127;
+  --btn-text: #ffffff;
 }
 
-/* Header logo — targets your top-left logo */
-.site-logo img,
-.header-logo img,
-.navbar-brand img {
+/* ===============================
+   PAGE RESET / BASE
+   =============================== */
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--page-bg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text-dark);
+}
+
+/* Utility: visually hidden (for a11y if ever needed) */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 16px;
+  background: #f3ecdf; /* subtle contrast from page bg */
+  position: sticky; top: 0; z-index: 10; /* optional sticky header */
+}
+
+.site-logo img{
+  display: block;
+  /* 2× size compared to the original baseline */
   width: calc(var(--header-logo-base) * var(--header-logo-scale));
   height: auto;
-  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
-/* Hero container (keep your existing background image via CSS, not in HTML) */
-.hero {
+/* If you add links, style them here */
+.site-nav a{
+  color: #2b2b2b;
+  text-decoration: none;
+  margin-left: 16px;
+  font-weight: 500;
+}
+
+/* ===============================
+   HERO
+   =============================== */
+.hero{
+  position: relative;
   min-height: var(--hero-min-height);
   display: grid;
-  align-items: center;     /* vertical centering */
+  align-items: center;       /* vertical centering of inner content */
   padding: clamp(16px, 5vw, 48px);
+  /* If you have a hero BACKGROUND photo, set it here: */
+  /* background: url("assets/hero/horse-hero.jpg") center/cover no-repeat; */
+  /* Subtle vignette feel for warmth; remove if not needed */
+  background-image:
+    radial-gradient(1200px 600px at 30% 0%, rgba(0,0,0,0.08), transparent),
+    linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0));
 }
 
-/* Keep hero content left-aligned, vertically centered */
-.hero .hero-left {
-  justify-self: start;     /* “middle-left” positioning */
+.hero-inner{
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+}
+
+.hero-left{
+  justify-self: start;       /* left alignment (middle-left overall) */
   max-width: var(--hero-max-width);
 }
 
-/* Hero logo — 5× bigger than the header logo */
-.hero .hero-logo {
-  width: calc(var(--header-logo-base) * var(--header-logo-scale) * var(--hero-logo-multiplier));
-  max-width: min(60vw, 1100px); /* safety cap */
-  height: auto;
+/* Hero logo is 5× the header logo (i.e., header 2× baseline; hero 10× baseline) */
+.hero-logo{
   display: block;
+  width: calc(var(--header-logo-base) * var(--header-logo-scale) * var(--hero-logo-multiplier));
+  max-width: min(60vw, 1100px); /* cap so it doesn't grow too huge */
+  height: auto;
   margin-bottom: 1rem;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   filter: drop-shadow(0 8px 32px rgba(0,0,0,.12));
 }
 
-/* Optional: responsive tweak for small screens */
+.hero-title{
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.2;
+  color: var(--text-light);
+  margin: 0.25rem 0 0.5rem;
+  text-shadow: 0 2px 18px rgba(0,0,0,.35);
+}
+
+.hero-sub{
+  font-size: clamp(14px, 1.6vw, 18px);
+  color: #f4efe6;
+  margin: 0 0 1rem;
+}
+
+.btn{
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary{
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: .75rem 1.25rem;
+  border-radius: 10px;
+  transition: background .2s ease-in-out, transform .06s ease-in-out;
+  box-shadow: 0 6px 22px rgba(0,0,0,.18);
+}
+.btn-primary:hover{ background: var(--btn-bg-hover); }
+.btn-primary:active{ transform: translateY(1px); }
+
+/* ===============================
+   CONTENT & FOOTER (example)
+   =============================== */
+.content{
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px 40px;
+}
+
+.site-footer{
+  text-align: center;
+  font-size: 14px;
+  color: #5a5a5a;
+  padding: 24px 16px 48px;
+}
+
+/* ===============================
+   RESPONSIVE TWEAKS
+   =============================== */
 @media (max-width: 768px){
-  :root { --header-logo-base: 90px; }
-  .hero .hero-logo { max-width: 86vw; }
+  /* Make base smaller on mobile; ratio stays intact (2× header, 5× hero) */
+  :root{
+    --header-logo-base: 90px;
+    --hero-min-height: 60vh;
+  }
+  .hero-logo{ max-width: 86vw; }
 }
