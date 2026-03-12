@@ -4,63 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Forever Part of Me Jewellery – Always Close to Your Heart</title>
-  assets/styles.css
+
+  <!-- CRITICAL: proper stylesheet link -->
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
-  <!-- HEADER: logo only -->
+  <!-- ================= HEADER ================= -->
   <header>
-    index.html" class="brand">
-      assets/images/logo.png" alt="Brand Logo" class="brand-logo">
+    <a href="index.html" class="brand">
+      <!-- LOGO ONLY (top-left) -->
+      <img src="assets/images/logo.png" alt="Brand Logo" class="brand-logo" />
     </a>
 
     <nav aria-label="Primary">
-      index.html">Home</a>
-      about.html">Our Story</a>
-      shop.html">Shop</a>
-      custom.html">Custom Orders</a>
-      contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">Our Story</a>
+      <a href="shop.html">Shop</a>
+      <a href="custom.html">Custom Orders</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO: uses your .jpeg hero -->
+  <!-- ================= HERO ================= -->
+  <!-- IMPORTANT: your file is .jpeg, so use .jpeg here -->
   <section class="hero" style="background-image:url('assets/images/new_hero.jpeg');">
     <div class="hero-overlay">
-      assets/images/logo.png" alt="Brand Logo" class="hero-logo hero-logo--huge">
+      <!-- GIANT HERO LOGO (logo-only branding) -->
+      <img src="assets/images/logo.png" alt="Brand Logo" class="hero-logo hero-logo--huge" />
+
       <p class="tagline">Always Close to Your Heart</p>
-      shop.html" class="btn">Browse the Collection</a>
+
+      <a href="shop.html" class="btn">Browse the Collection</a>
     </div>
   </section>
 
+  <!-- ================= INTRO ================= -->
   <section class="intro">
     <h2>Where Memories Become Art</h2>
-    <p>Each piece is handcrafted with compassion and care — from horsehair bracelets to pawprint pendants and ash‑infused silver memorials.</p>
+    <p>
+      Each piece is handcrafted with compassion and care — from horsehair bracelets
+      to pawprint pendants and ash‑infused silver memorials.
+    </p>
   </section>
 
+  <!-- ================= FEATURED ================= -->
   <section class="featured">
     <h2>Featured Creations</h2>
+
     <div class="grid">
       <div class="card">
-        assets/images/horsehair_sample.jpg" class="card-img" alt="Horsehair Bracelet">
+        <img src="assets/images/horsehair_sample.jpg" class="card-img" alt="Horsehair Bracelet" />
         <h3>Horsehair Bracelets</h3>
         <p>Elegant, personal and crafted from your horse’s mane or tail.</p>
       </div>
+
       <div class="card">
-        assets/images/pawprint_sample.jpg" class="card-img" alt="Pawprint Pendant">
+        <img src="assets/images/pawprint_sample.jpg" class="card-img" alt="Pawprint Pendant" />
         <h3>Pawprint Pendants</h3>
         <p>Capture the unique print of your beloved animal forever.</p>
       </div>
+
       <div class="card">
-        assets/images/memorial_necklace.jpg" class="card-img" alt="Ash-Infused Silver">
+        <img src="assets/images/memorial_necklace.jpg" class="card-img" alt="Ash‑Infused Silver" />
         <h3>Ash‑Infused Silver</h3>
         <p>Meaningful keepsakes forged with love and remembrance.</p>
       </div>
     </div>
   </section>
 
+  <!-- ================= FOOTER ================= -->
   <footer>
     <p>© 2026 Forever Part of Me Jewellery. Handcrafted with love in the UK.</p>
   </footer>
 </body>
 </html>
-``
