@@ -1,131 +1,155 @@
 /* =========================================
    Forever Part of Me Jewellery – styles.css
-   Warm memorial + equestrian theme
-   ========================================= */
+   Photoreal, clean, modern hero banner
+========================================= */
 
 :root{
   --cream:#F4EDE2;
   --peach:#FFF9F6;
-  --tan:#D9C3A5;
   --saddle:#C2A58A;
   --leather:#8C6E59;
-  --ink:#543F36;
-  --shadow:0 4px 12px rgba(0,0,0,.12);
+  --ink:#4F3B32;
+  --shadow:0 4px 14px rgba(0,0,0,.14);
 }
 
-/* ---------- Base ---------- */
+/* Base */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font-family:"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  color:var(--ink);
+  font-family:"Montserrat", Arial, sans-serif;
   background:var(--peach);
+  color:var(--ink);
   line-height:1.6;
 }
-h2{ font-family:"Cormorant Garamond", Georgia, serif; color:var(--leather); margin:0 0 10px; }
-h3{ color:var(--leather); margin:8px 0 }
 
-/* ---------- Header (logo 2× bigger; text removed) ---------- */
+/* ================= HEADER ================= */
 header{
   background:var(--cream);
+  padding:18px 32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   border-bottom:1px solid rgba(0,0,0,.06);
-  padding:14px 26px;
-  display:flex; align-items:center; justify-content:space-between;
-}
-.brand{ display:flex; align-items:center; text-decoration:none; }
-.brand-logo{
-  width:144px;       /* 2× bigger than the previous ~72px look */
-  height:144px;
-  object-fit:contain; display:block;
 }
 
-/* Nav */
+/* TOP-LEFT LOGO (2× bigger than prior version) */
+.brand-logo{
+  width:clamp(320px, 34vw, 600px);   /* expands LARGE but responsive */
+  height:auto;
+  display:block;
+}
+
 nav a{
+  margin-left:24px;
   color:var(--leather);
   text-decoration:none;
   font-weight:600;
-  margin-left:20px;
 }
-nav a:hover{ color:#5b473a; }
+nav a:hover{
+  color:#6a5443;
+}
 
-/* ---------- Hero (logo much larger, no title text) ---------- */
+/* ================= HERO ================= */
 .hero{
-  min-height:520px;
-  background-size:cover; background-position:center;
-  display:flex; align-items:center;
-  padding:60px 30px;
+  min-height:720px;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  padding:64px 32px;
 }
+
+/* Dark glass panel */
 .hero-overlay{
   background:rgba(0,0,0,.42);
-  padding:36px 40px;
-  border-radius:12px;
+  padding:48px 54px;
+  border-radius:14px;
   color:#fff;
-  max-width:880px;
+  max-width:min(95vw, 1200px);
   box-shadow:var(--shadow);
-  text-align:left;
 }
 
-/* Base large logo size (your previous “big” mark) */
-.hero-logo{
-  width:300px;
-  height:300px;
-  object-fit:contain; display:block; margin-bottom:14px;
-}
-
-/* NEW: 2× bigger than the big mark above (so visually huge) */
+/* HERO LOGO — 2× bigger than previous huge one */
 .hero-logo--huge{
-  width:600px;
-  height:600px;
+  width:clamp(1000px, 72vw, 2200px); /* massively large but responsive */
+  height:auto;
+  display:block;
+  margin-bottom:26px;
 }
 
-/* Tagline only (title removed) */
+/* Tagline below the giant logo */
 .tagline{
-  margin:12px 0 18px;
-  font-size:22px;
+  font-size:26px;
   font-weight:700;
   letter-spacing:.3px;
-  color:#fff7f1;
+  color:#fff6ef;
+  margin:10px 0 28px;
 }
 
+/* Button */
 .btn{
   display:inline-block;
   background:var(--saddle);
-  color:#fff; text-decoration:none;
-  padding:12px 20px;
+  color:white;
+  padding:14px 24px;
   border-radius:6px;
   font-weight:600;
+  text-decoration:none;
 }
-.btn:hover{ filter:brightness(.92); }
+.btn:hover{
+  filter:brightness(.92);
+}
 
-/* ---------- Sections ---------- */
-.intro, .featured{ padding:40px 26px; }
+/* ================= SECTIONS ================= */
+.intro,.featured{
+  padding:40px 32px;
+}
+h2{
+  font-family:"Cormorant Garamond", Georgia, serif;
+  color:var(--leather);
+  margin:0 0 10px;
+}
+h3{
+  color:var(--leather);
+  margin:8px 0;
+}
 
-/* ---------- Grid & Cards ---------- */
+/* ================= GRID ================= */
 .grid{
-  display:grid; gap:26px;
-  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-  margin-top:20px;
+  display:grid;
+  gap:28px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  margin-top:24px;
 }
+
 .card{
   background:var(--cream);
-  padding:18px; border-radius:8px; box-shadow:var(--shadow);
+  padding:22px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
 }
-.card-img{ width:100%; display:block; border-radius:6px; margin-bottom:10px; }
+.card-img{
+  width:100%;
+  border-radius:6px;
+  display:block;
+  margin-bottom:14px;
+}
 
-/* ---------- Footer ---------- */
+/* ================= FOOTER ================= */
 footer{
   background:var(--cream);
-  text-align:center; padding:20px; margin-top:40px;
+  padding:24px;
+  text-align:center;
   border-top:1px solid rgba(0,0,0,.06);
+  margin-top:40px;
 }
 
-/* ---------- Responsive tweaks ---------- */
-@media (max-width:1024px){
-  .hero-logo--huge{ width:480px; height:480px; } /* scale down slightly on medium screens */
+/* ================= RESPONSIVE ================= */
+@media (max-width:900px){
+  .hero{ min-height:580px; padding:48px 24px; }
+  .tagline{ font-size:22px; }
 }
-@media (max-width:720px){
-  .brand-logo{ width:110px; height:110px; }
-  .hero{ padding:40px 20px; }
-  .hero-logo--huge{ width:320px; height:320px; }
-  .tagline{ font-size:18px; }
+@media (max-width:560px){
+  .brand-logo{ width:clamp(240px, 60vw, 360px); }
+  .hero-logo--huge{ width:clamp(520px, 92vw, 1000px); }
 }
